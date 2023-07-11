@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.PharmaController">
+    <children>
+        <TextField layoutX="195.0" layoutY="22.0" prefHeight="37.0" prefWidth="269.0" />
+        <TextField layoutX="602.0" layoutY="23.0" prefHeight="37.0" prefWidth="269.0" />
+        <Label layoutX="22.0" layoutY="22.0" prefHeight="37.0" prefWidth="173.0" text="Customer Name : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="520.0" layoutY="26.0" text="Phone : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="84.0" prefHeight="30.0" prefWidth="142.0" text="Description : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField layoutX="147.0" layoutY="84.0" prefHeight="70.0" prefWidth="398.0" />
+        <Label layoutX="944.0" layoutY="27.0" text="Date : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField layoutX="1009.0" layoutY="22.0" prefHeight="37.0" prefWidth="203.0" />
+        <Line endX="1230.0" endY="-51.70001220703125" layoutX="109.0" layoutY="239.0" startX="-109.0" startY="-51.70001220703125" />
+        <ComboBox layoutX="22.0" layoutY="199.0" prefHeight="30.0" prefWidth="173.0" promptText="Medicine Name" />
+        <ComboBox layoutX="214.0" layoutY="199.0" prefHeight="30.0" prefWidth="173.0" promptText="Medicine ID" />
+        <Label layoutX="414.0" layoutY="199.0" text="Available Quantity : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Text layoutX="214.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <TextField layoutX="602.0" layoutY="199.0" prefHeight="30.0" prefWidth="71.0" />
+        <TextField layoutX="797.0" layoutY="199.0" prefHeight="30.0" prefWidth="149.0" />
+        <Label layoutX="698.0" layoutY="199.0" text="Quantity : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Button layoutX="979.0" layoutY="193.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" text="Create">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="1098.0" layoutY="193.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" text="Delete">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <TableView layoutX="22.0" layoutY="255.0" prefHeight="357.0" prefWidth="1269.0">
+            <columns>
+                <TableColumn prefWidth="150.40000915527344" text="Medicine Name" />
+                <TableColumn minWidth="0.0" prefWidth="148.800048828125" text="Medicine ID" />
+                <TableColumn prefWidth="145.5999755859375" text="Expired" />
+                <TableColumn prefWidth="107.199951171875" text="Quantity" />
+                <TableColumn prefWidth="126.4000244140625" text="Price" />
+            </columns>
+        </TableView>
+        <Label layoutX="770.0" layoutY="629.0" text="Total Price : ">
+            <font>
+                <Font name="System Bold Italic" size="25.0" />
+            </font>
+        </Label>
+        <TextField editable="false" layoutX="935.0" layoutY="632.0" prefHeight="30.0" prefWidth="194.0" />
+        <Button layoutX="1193.0" layoutY="626.0" mnemonicParsing="false" text="Confirm">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>

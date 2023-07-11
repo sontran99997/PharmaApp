@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 785px; -fx-pref-width: 1535px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.MainAppController">
+    <children>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="42.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100px;">
+            <image>
+                <Image url="@Image/logo.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="125.0" layoutY="18.0" text="Pharmacy" textFill="#132e4f">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="280.0" layoutY="18.0" text="Management" textFill="#1d9b2a">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <Line endX="1421.0" endY="-10.0" layoutX="115.0" layoutY="100.0" startX="-114.99998474121094" startY="-10.400001525878906" />
+        <Line endX="1.5000457763671875" endY="602.0" layoutX="194.0" layoutY="198.0" startX="1.5000457763671875" startY="-108.0" />
+        <VBox alignment="CENTER" layoutY="90.0" prefHeight="568.0" prefWidth="196.0">
+            <children>
+                <Button fx:id="btnDash" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#setBtnDash" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Dashboard">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="btnMedicine" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBtnMedicine" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Medicine" textAlignment="CENTER" VBox.vgrow="NEVER">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="-5.0" />
+                    </padding>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Customer">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="2.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="btnSale" mnemonicParsing="false" onAction="#setBtnSale" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Sales">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="-50.0" />
+                    </padding>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Supplier">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="-14.0" />
+                    </padding>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Report">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="-34.0" />
+                    </padding>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Logout">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <padding>
+                        <Insets left="-28.0" />
+                    </padding>
+                </Button>
+            </children>
+        </VBox>
+      <Pane fx:id="rightPane" layoutX="196.0" layoutY="87.0" prefHeight="695.0" prefWidth="1341.0" />
+      <Pane fx:id="mainView" layoutX="196.0" layoutY="87.0" prefHeight="695.0" prefWidth="1341.0" />
+    </children>
+</Pane>
