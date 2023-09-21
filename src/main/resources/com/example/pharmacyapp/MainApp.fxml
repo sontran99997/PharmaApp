@@ -12,9 +12,9 @@
 
 <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 785px; -fx-pref-width: 1535px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.MainAppController">
     <children>
-        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="42.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100px;">
+        <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="48.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100px;">
             <image>
-                <Image url="@Image/logo.png" />
+                <Image url="@Image/logo2.png" />
             </image>
         </ImageView>
         <Label layoutX="125.0" layoutY="18.0" text="Pharmacy" textFill="#132e4f">
@@ -22,16 +22,16 @@
                 <Font name="System Bold Italic" size="30.0" />
             </font>
         </Label>
-        <Label layoutX="280.0" layoutY="18.0" text="Management" textFill="#1d9b2a">
+        <Label layoutX="280.0" layoutY="18.0" text="Management" textFill="#132e4f">
             <font>
                 <Font name="System Bold Italic" size="30.0" />
             </font>
         </Label>
         <Line endX="1421.0" endY="-10.0" layoutX="115.0" layoutY="100.0" startX="-114.99998474121094" startY="-10.400001525878906" />
         <Line endX="1.5000457763671875" endY="602.0" layoutX="194.0" layoutY="198.0" startX="1.5000457763671875" startY="-108.0" />
-        <VBox alignment="CENTER" layoutY="90.0" prefHeight="568.0" prefWidth="196.0">
+        <VBox alignment="CENTER" layoutX="-1.0" layoutY="91.0" prefHeight="494.0" prefWidth="196.0">
             <children>
-                <Button fx:id="btnDash" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#setBtnDash" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Dashboard">
+                <Button fx:id="btnDash" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#setBtnDash" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Dashboard">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -39,7 +39,7 @@
                         <Insets left="10.0" />
                     </padding>
                 </Button>
-                <Button fx:id="btnMedicine" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBtnMedicine" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Medicine" textAlignment="CENTER" VBox.vgrow="NEVER">
+                <Button fx:id="btnMedicine" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBtnMedicine" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Medicine" textAlignment="CENTER" VBox.vgrow="NEVER">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -50,7 +50,7 @@
                         <Insets left="-5.0" />
                     </padding>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Customer">
+                <Button fx:id="btnCus" mnemonicParsing="false" onAction="#setBtnCustomer" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Customer">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -58,7 +58,7 @@
                         <Insets left="2.0" />
                     </padding>
                 </Button>
-                <Button fx:id="btnSale" mnemonicParsing="false" onAction="#setBtnSale" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Sales">
+                <Button fx:id="btnSale" mnemonicParsing="false" onAction="#setBtnSale" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Sales">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -66,7 +66,7 @@
                         <Insets left="-50.0" />
                     </padding>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Supplier">
+                <Button fx:id="btnSup" mnemonicParsing="false" onAction="#setBtnSupplier" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Supplier">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -74,7 +74,7 @@
                         <Insets left="-14.0" />
                     </padding>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Report">
+                <Button fx:id="btnReport" mnemonicParsing="false" onAction="#setBtnReport" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #4694bb; -fx-border-color: #000; -fx-border-width: 0 0 1 0;" text="Report">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -82,17 +82,41 @@
                         <Insets left="-34.0" />
                     </padding>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #fff;" text="Logout">
-                    <font>
-                        <Font size="25.0" />
-                    </font>
-                    <padding>
-                        <Insets left="-28.0" />
-                    </padding>
-                </Button>
             </children>
         </VBox>
-      <Pane fx:id="rightPane" layoutX="196.0" layoutY="87.0" prefHeight="695.0" prefWidth="1341.0" />
-      <Pane fx:id="mainView" layoutX="196.0" layoutY="87.0" prefHeight="695.0" prefWidth="1341.0" />
+        <Pane fx:id="rightPane" layoutX="196.0" layoutY="87.0" prefHeight="695.0" prefWidth="1341.0">
+            <children>
+                <Pane fx:id="mainView" prefHeight="695.0" prefWidth="1341.0">
+                    <children>
+                        <ImageView fitHeight="711.0" fitWidth="1350.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/By%20Group%20Borcelle%20(1).png" />
+                            </image>
+                        </ImageView>
+                    </children></Pane>
+            </children></Pane>
+        <Label fx:id="lblName" layoutX="1368.0" layoutY="27.0" textFill="#132e4f">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblMa" layoutX="1375.0" layoutY="63.0" prefHeight="18.0" prefWidth="77.0" visible="false">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutY="702.0" mnemonicParsing="false" onAction="#setBtnLogOut" prefHeight="82.0" prefWidth="194.0" style="-fx-background-color: #EB5353; -fx-border-color: #000; -fx-border-width: 1 0 1 0;" text="Logout">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+        </Button>
+        <ImageView fitHeight="51.0" fitWidth="50.0" layoutX="18.0" layoutY="720.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Image/logoutIcon.png" />
+            </image>
+        </ImageView>
     </children>
 </Pane>

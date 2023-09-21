@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 1340px; -fx-pref-height: 700px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.ReportController">
+    <children>
+        <Label layoutX="12.0" layoutY="14.0" text="Report">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="13.0" layoutY="59.0" text="From : ">
+            <font>
+                <Font name="System Italic" size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="390.0" layoutY="59.0" text="To : ">
+            <font>
+                <Font name="System Italic" size="30.0" />
+            </font>
+        </Label>
+        <DatePicker fx:id="txtStart" layoutX="123.0" layoutY="59.0" onAction="#getDSReport" prefHeight="45.0" prefWidth="193.0" />
+        <DatePicker fx:id="txtEnd" layoutX="469.0" layoutY="59.0" onAction="#getDSReport" prefHeight="45.0" prefWidth="193.0" />
+        <TableView fx:id="tblReport" layoutX="10.0" layoutY="139.0" onMouseClicked="#getDetailSelected" prefHeight="487.0" prefWidth="394.0">
+            <columns>
+                <TableColumn fx:id="clmDate" prefWidth="115.0" text="Date" />
+                <TableColumn fx:id="clmShift" prefWidth="42.0" text="Shift" />
+                <TableColumn fx:id="clmExport" prefWidth="116.0" text="Export" />
+                <TableColumn fx:id="clmImport" prefWidth="119.99997558593748" text="Import" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tblExportReport" layoutX="436.0" layoutY="139.0" prefHeight="487.0" prefWidth="427.0">
+            <columns>
+                <TableColumn fx:id="clmID1" prefWidth="27.0" text="ID" />
+                <TableColumn fx:id="clmName1" prefWidth="103.0" text="Name" />
+                <TableColumn fx:id="clmPrice1" prefWidth="101.0" text="Price" />
+                <TableColumn fx:id="clmQua1" prefWidth="54.0" text="Quantity" />
+                <TableColumn fx:id="clmTotal1" prefWidth="141.0" text="TotalPrice" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tblImportReport" layoutX="899.0" layoutY="139.0" prefHeight="487.0" prefWidth="427.0">
+            <columns>
+                <TableColumn fx:id="clmID2" prefWidth="27.0" text="ID" />
+                <TableColumn fx:id="clmName2" prefWidth="103.0" text="Name" />
+                <TableColumn fx:id="clmPrice2" prefWidth="101.0" text="Price" />
+                <TableColumn fx:id="clmQua2" prefWidth="54.0" text="Quantity" />
+                <TableColumn fx:id="clmTotal2" prefWidth="141.0" text="TotalPrice" />
+            </columns>
+        </TableView>
+        <Label layoutX="436.0" layoutY="104.0" text="Export Detail">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="899.0" layoutY="104.0" text="Import Detail">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="10.0" layoutY="104.0" text="Report List">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="578.0" layoutY="634.0" text="Total :">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblExpTotal" layoutX="667.0" layoutY="634.0" prefHeight="35.0" prefWidth="194.0">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="1041.0" layoutY="634.0" text="Total :">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblImpTotal" layoutX="1131.0" layoutY="634.0" prefHeight="35.0" prefWidth="194.0">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+    </children>
+
+</AnchorPane>

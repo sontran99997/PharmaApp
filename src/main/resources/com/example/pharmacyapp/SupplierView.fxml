@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.SupplierController">
+    <children>
+        <Label layoutX="26.0" layoutY="22.0" prefHeight="45.0" prefWidth="250.0" text="Manage Supplier">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="26.0" layoutY="88.0" prefHeight="45.0" prefWidth="114.0" text="Search : ">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="140.0" layoutY="92.0" onKeyReleased="#search" prefHeight="37.0" prefWidth="202.0" promptText="Search by Name" />
+        <Button fx:id="btnAddSupp" layoutX="620.0" layoutY="92.0" mnemonicParsing="false" onAction="#setBtnAddNewSup" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #1D9B2A;" text="+Add Supplier" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Button fx:id="btnDeleteSupp" layoutX="1002.0" layoutY="92.0" mnemonicParsing="false" onAction="#setBtnDelete" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #EB5353;" text="Delete Supplier" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <TableView fx:id="tblSup" layoutX="26.0" layoutY="175.0" prefHeight="508.0" prefWidth="1286.0">
+            <columns>
+                <TableColumn fx:id="clmID" prefWidth="56.0" text="ID" />
+                <TableColumn fx:id="clmName" prefWidth="229.0" text="Supplier Name" />
+                <TableColumn fx:id="clmAdd" prefWidth="396.0" text="Address" />
+                <TableColumn fx:id="clmPer" prefWidth="164.0" text="Contact Person" />
+                <TableColumn fx:id="clmPhone" prefWidth="132.0" text="Phone Number" />
+                <TableColumn fx:id="clmNote" prefWidth="311.0" text="Note" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnUpdateSupp" layoutX="814.0" layoutY="92.0" mnemonicParsing="false" onAction="#setBtnUpdate" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #187498;" text="Update Supplier" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <TextField fx:id="txtPhone" layoutX="362.0" layoutY="92.0" onKeyReleased="#search" prefHeight="37.0" prefWidth="202.0" promptText="Search by Phone Number" />
+        <Label fx:id="lblErrCusPhone1" layoutX="379.0" layoutY="134.0" text="Phone Number is wrong format" textFill="RED" visible="false" />
+    </children>
+
+</AnchorPane>

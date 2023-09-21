@@ -1,0 +1,23 @@
+
+.table-view .column-header{
+    -fx-background-color: #4694bb;
+    -fx-padding: 0 0 5px 0;
+}
+.table1 .column-header{
+    -fx-background-color: #4694bb;
+}
+.table2 .column-header{
+    -fx-background-color : #64CCC5;
+}
+.buttonAdd{
+    -fx-background-color: linear-gradient(to bottom right, #4694bb  , #a8d4ef);
+
+}
+.labelDashboard{
+    -fx-background-color:linear-gradient(to bottom right, #4694bb  , #2a5178);
+    -fx-border-radius:15px;
+
+}
+.confirmButton{
+    -fx-background-color:#00F27F;
+}

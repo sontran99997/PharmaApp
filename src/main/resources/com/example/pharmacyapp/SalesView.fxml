@@ -1,87 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.PharmaController">
+<Pane fx:id="mainView" prefHeight="400.0" prefWidth="1247.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.SalesController">
     <children>
-        <TextField layoutX="195.0" layoutY="22.0" prefHeight="37.0" prefWidth="269.0" />
-        <TextField layoutX="602.0" layoutY="23.0" prefHeight="37.0" prefWidth="269.0" />
+        <TextField fx:id="txtCusName" layoutX="208.0" layoutY="24.0" onKeyReleased="#setEnableBtnAddCus" prefHeight="37.0" prefWidth="220.0" style="-fx-alignment: center;" />
+        <TextField fx:id="txtCusPhone" layoutX="591.0" layoutY="24.0" onKeyReleased="#setEnableBtnAddCus" prefHeight="37.0" prefWidth="220.0" style="-fx-alignment: center;" />
         <Label layoutX="22.0" layoutY="22.0" prefHeight="37.0" prefWidth="173.0" text="Customer Name : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label layoutX="520.0" layoutY="26.0" text="Phone : ">
+        <Label layoutX="484.0" layoutY="28.0" text="Phone : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label layoutX="22.0" layoutY="84.0" prefHeight="30.0" prefWidth="142.0" text="Description : ">
+        <Label layoutX="442.0" layoutY="109.0" prefHeight="30.0" prefWidth="142.0" text="Description : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <TextField layoutX="147.0" layoutY="84.0" prefHeight="70.0" prefWidth="398.0" />
-        <Label layoutX="944.0" layoutY="27.0" text="Date : ">
+        <Label layoutX="955.0" layoutY="29.0" text="Date : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <TextField layoutX="1009.0" layoutY="22.0" prefHeight="37.0" prefWidth="203.0" />
-        <Line endX="1230.0" endY="-51.70001220703125" layoutX="109.0" layoutY="239.0" startX="-109.0" startY="-51.70001220703125" />
-        <ComboBox layoutX="22.0" layoutY="199.0" prefHeight="30.0" prefWidth="173.0" promptText="Medicine Name" />
-        <ComboBox layoutX="214.0" layoutY="199.0" prefHeight="30.0" prefWidth="173.0" promptText="Medicine ID" />
+        <Line endX="1230.0" endY="-51.70001220703125" layoutX="109.0" layoutY="225.0" startX="-109.0" startY="-51.70001220703125" />
+        <ComboBox fx:id="cbbID" layoutX="22.0" layoutY="199.0" onAction="#setSelectedFromCBBID" prefHeight="30.0" prefWidth="173.0" promptText="Medicine ID" />
+        <ComboBox fx:id="cbbName" layoutX="214.0" layoutY="199.0" onAction="#setSelectedFromCBBName" prefHeight="30.0" prefWidth="173.0" promptText="Medicine Name" />
         <Label layoutX="414.0" layoutY="199.0" text="Available Quantity : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Text layoutX="214.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-        <TextField layoutX="602.0" layoutY="199.0" prefHeight="30.0" prefWidth="71.0" />
-        <TextField layoutX="797.0" layoutY="199.0" prefHeight="30.0" prefWidth="149.0" />
+        <TextField fx:id="txtQuantity" layoutX="797.0" layoutY="199.0" prefHeight="30.0" prefWidth="149.0" />
         <Label layoutX="698.0" layoutY="199.0" text="Quantity : ">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button layoutX="979.0" layoutY="193.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" text="Create">
+        <Button layoutX="955.0" layoutY="193.0" mnemonicParsing="false" onAction="#btnAdd" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #1D9B2A;" text="Add" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-        <Button layoutX="1098.0" layoutY="193.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" text="Delete">
+        <Button layoutX="1181.0" layoutY="193.0" mnemonicParsing="false" onAction="#setBtnDelete" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #EB5353;" text="Delete" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-        <TableView layoutX="22.0" layoutY="255.0" prefHeight="357.0" prefWidth="1269.0">
+        <TableView fx:id="tblMedicine" layoutX="22.0" layoutY="255.0" onMouseClicked="#setSelectedMedicine" prefHeight="357.0" prefWidth="578.0">
             <columns>
-                <TableColumn prefWidth="150.40000915527344" text="Medicine Name" />
-                <TableColumn minWidth="0.0" prefWidth="148.800048828125" text="Medicine ID" />
-                <TableColumn prefWidth="145.5999755859375" text="Expired" />
-                <TableColumn prefWidth="107.199951171875" text="Quantity" />
-                <TableColumn prefWidth="126.4000244140625" text="Price" />
+                <TableColumn fx:id="clmMedID" minWidth="0.0" prefWidth="88.0" text="Medicine ID" />
+                <TableColumn fx:id="clmMedName" prefWidth="247.0" text="Medicine Name" />
+                <TableColumn fx:id="clmMedQua" prefWidth="99.20001220703125" text="Quantity" />
+                <TableColumn fx:id="clmMedPrice" prefWidth="143.20001220703125" text="Price" />
             </columns>
         </TableView>
-        <Label layoutX="770.0" layoutY="629.0" text="Total Price : ">
+        <Label layoutX="659.0" layoutY="632.0" text="Total Price : ">
             <font>
                 <Font name="System Bold Italic" size="25.0" />
             </font>
         </Label>
-        <TextField editable="false" layoutX="935.0" layoutY="632.0" prefHeight="30.0" prefWidth="194.0" />
-        <Button layoutX="1193.0" layoutY="626.0" mnemonicParsing="false" text="Confirm">
+        <Button fx:id="btnYes" layoutX="1178.0" layoutY="628.0" mnemonicParsing="false" onAction="#setBtnConfirm" style="-fx-background-color: #00F27F;" text="Confirm">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
+        <TableView fx:id="tblAddMedicine" layoutX="659.0" layoutY="255.0" onMouseClicked="#setSelectedMedicine" prefHeight="357.0" prefWidth="616.0" styleClass="table2">
+            <columns>
+                <TableColumn fx:id="clmAddID" minWidth="0.0" prefWidth="83.0" text="Medicine ID" />
+                <TableColumn fx:id="clmAddName" prefWidth="260.0" text="Medicine Name" />
+                <TableColumn fx:id="clmAddQua" prefWidth="76.0" text="Quantity" />
+                <TableColumn fx:id="clmAddTotal" prefWidth="192.0" text="Total Price" />
+            </columns>
+        </TableView>
+        <Label fx:id="lblQuantity" layoutX="591.0" layoutY="201.0" prefHeight="27.0" prefWidth="81.0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblDate" layoutX="1016.0" layoutY="31.0" prefHeight="27.0" prefWidth="230.0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblErrQua" layoutX="825.0" layoutY="232.0" text="Quantity is wrong" textFill="RED" visible="false" />
+        <Label fx:id="lblErrID" layoutX="84.0" layoutY="231.0" text="ID wrong" textFill="RED" visible="false" />
+        <Label fx:id="lblErrName" layoutX="259.0" layoutY="231.0" text="Name wrong" textFill="RED" visible="false" />
+        <Label fx:id="lblTotalPrice" layoutX="806.0" layoutY="631.0" prefHeight="36.0" prefWidth="245.0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnSearch" layoutX="828.0" layoutY="20.0" mnemonicParsing="false" onAction="#searchCus" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #187498;" text="Search" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <TextArea fx:id="txtCusNote" layoutX="590.0" layoutY="92.0" prefHeight="63.0" prefWidth="328.0" />
+        <Label fx:id="lblCusID" layoutX="1226.0" layoutY="147.0" visible="false" />
+        <TextField fx:id="txtCusAdd" layoutX="208.0" layoutY="107.0" onKeyReleased="#setEnableBtnAddCus" prefHeight="37.0" prefWidth="220.0" />
+        <Label layoutX="22.0" layoutY="105.0" prefHeight="37.0" prefWidth="186.0" text="Customer Address : ">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnAddNewCus" layoutX="955.0" layoutY="102.0" mnemonicParsing="false" onAction="#addNewCus" prefHeight="44.0" prefWidth="176.0" style="-fx-background-color: #1D9B2A;" text="+Add Customer" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Label fx:id="lblErrCusPhone" layoutX="637.0" layoutY="66.0" text="Please fill in this field!!" textFill="RED" visible="false">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblErrCusName" layoutX="254.0" layoutY="66.0" text="Please fill in this field!!" textFill="RED" visible="false">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblErrCusAdd" layoutX="254.0" layoutY="146.0" text="Please fill in this field!!" textFill="RED" visible="false">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblErrCusPhone1" layoutX="617.0" layoutY="67.0" text="Phone Number is wrong format" textFill="RED" visible="false" />
+        <Label fx:id="lblMaNV" layoutX="1247.0" layoutY="147.0" />
+      <CheckBox fx:id="chkNo" layoutX="1152.0" layoutY="108.0" mnemonicParsing="false" onAction="#checkBoxNoInfo" prefHeight="36.0" prefWidth="168.0" text="No Infomation Customer" />
     </children>
 </Pane>

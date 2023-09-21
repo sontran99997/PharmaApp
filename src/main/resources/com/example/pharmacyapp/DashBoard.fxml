@@ -8,100 +8,101 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.PharmaController">
+<Pane fx:id="mainView" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.DashBoardController">
     <children>
-        <Line endX="1220.0" endY="-50.507110595703125" layoutX="123.0" layoutY="220.0" startX="-123.5" startY="-50.507110595703125" />
-        <TableView layoutX="45.0" layoutY="323.0" prefHeight="365.0" prefWidth="1240.0">
+        <Line endX="1217.0" endY="-78.40000915527344" layoutX="123.0" layoutY="220.0" startX="-123.00001525878906" startY="-78.40000915527344" />
+        <TableView fx:id="tblThuoc" layoutX="45.0" layoutY="289.0" prefHeight="399.0" prefWidth="1240.0" stylesheets="@CSS/style.css">
             <columns>
-                <TableColumn prefWidth="172.7999725341797" text="    Medicine Name" />
-                <TableColumn prefWidth="184.0" text="Medicine Type" />
-                <TableColumn prefWidth="197.5999755859375" text="Image" />
-                <TableColumn prefWidth="165.60003662109375" text="Prices" />
-                <TableColumn prefWidth="217.5999755859375" text="Supplier" />
-                <TableColumn prefWidth="139.2000732421875" text="Quantity" />
-                <TableColumn prefWidth="163.2000732421875" text="Expired Day" />
+                <TableColumn fx:id="clmCode" prefWidth="94.0" text="ID" />
+                <TableColumn fx:id="clmName" prefWidth="294.0" text="Medicine Name" />
+                <TableColumn fx:id="clmType" prefWidth="192.0" text="Medicine Type" />
+                <TableColumn fx:id="clmSup" prefWidth="184.0" text="Supplier" />
+                <TableColumn fx:id="clmQua" prefWidth="134.0" text="Quantity" />
+                <TableColumn fx:id="clmExpiredDay" prefWidth="189.60009765625" text="Expired Day" />
+                <TableColumn fx:id="clmPrice" prefWidth="150.39990234375" text="Prices" />
             </columns>
         </TableView>
-        <Label layoutX="45.0" layoutY="293.0" text="Top Medicine">
+        <Label layoutX="45.0" layoutY="255.0" text="Top Medicine">
             <font>
                 <Font name="System Bold Italic" size="20.0" />
             </font>
         </Label>
-        <Pane layoutX="45.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 125px; -fx-border-radius: 10px; -fx-border-color: #000;">
+        <Pane layoutX="45.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 100px;" styleClass="labelDashboard">
             <children>
-                <Label layoutX="35.0" layoutY="14.0" text="Total Medicine">
+                <Label layoutX="35.0" layoutY="14.0" text="Total Medicine" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="76.0" layoutY="63.0" text="100">
+                <Label fx:id="lblTotalMed" layoutX="76.0" layoutY="44.0" prefHeight="45.0" prefWidth="49.0" style="-fx-alignment: center;" textAlignment="CENTER">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-        <Pane layoutX="308.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 125px; -fx-border-radius: 10px; -fx-border-color: #000;">
+        <Pane layoutX="378.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 100px;" styleClass="labelDashboard">
             <children>
-                <Label layoutX="33.0" layoutY="14.0" text="Total Customer">
+                <Label layoutX="33.0" layoutY="14.0" text="Total Customer" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="76.0" layoutY="63.0" text="100">
+                <Label fx:id="lblTotalCus" layoutX="76.0" layoutY="44.0" prefHeight="45.0" prefWidth="49.0" style="-fx-alignment: center;" textAlignment="CENTER">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-        <Pane layoutX="565.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 125px; -fx-border-radius: 10px; -fx-border-color: #000;">
+        <Pane layoutX="704.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 100px;" styleClass="labelDashboard">
             <children>
-                <Label layoutX="39.0" layoutY="14.0" text="Total Supplier">
+                <Label layoutX="39.0" layoutY="14.0" text="Total Supplier" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="76.0" layoutY="63.0" text="100">
+                <Label fx:id="lblTotalSup" layoutX="75.0" layoutY="44.0" prefHeight="45.0" prefWidth="49.0" style="-fx-alignment: center;" textAlignment="CENTER">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-        <Pane layoutX="831.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 125px; -fx-border-radius: 10px; -fx-border-color: #000;">
+        <Pane layoutX="1019.0" layoutY="24.0" prefHeight="138.0" prefWidth="135.0" style="-fx-pref-width: 200px; -fx-pref-height: 100px;" styleClass="labelDashboard">
             <children>
-                <Label layoutX="43.0" layoutY="14.0" text="Total Expired">
+                <Label layoutX="22.0" layoutY="14.0" text="Expires in 30 days" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="76.0" layoutY="63.0" text="100">
+                <Label fx:id="lblTotalExpired" layoutX="76.0" layoutY="44.0" prefHeight="45.0" prefWidth="49.0" style="-fx-alignment: center;" textAlignment="CENTER">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-        <Button layoutX="45.0" layoutY="188.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" text="Add New Customer">
+        <Button fx:id="btnAddNewCus" layoutX="45.0" layoutY="155.0" mnemonicParsing="false" onAction="#setBtnAddNewCus" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" styleClass="buttonAdd" text="Add New Customer">
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Button>
-        <Button layoutX="308.0" layoutY="188.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" text="Add New Medicne">
+        <Button fx:id="btnAddNewMed" layoutX="378.0" layoutY="155.0" mnemonicParsing="false" onAction="#setBtnAddNewMed" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" styleClass="buttonAdd" text="Add New Medicne">
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Button>
-        <Button layoutX="565.0" layoutY="188.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" text="Add New Supplier">
+        <Button fx:id="btnAddNewSup" layoutX="704.0" layoutY="155.0" mnemonicParsing="false" onAction="#setBtnAddNewSupp" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" styleClass="buttonAdd" text="Add New Supplier">
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Button>
-        <Button layoutX="831.0" layoutY="188.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" text="Today Report">
+        <Button fx:id="btnReport" layoutX="1019.0" layoutY="155.0" mnemonicParsing="false" onAction="#setBtnDailyReport" prefHeight="82.0" prefWidth="200.0" style="-fx-border-radius: 10px;" styleClass="buttonAdd" text="Today Report">
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Button>
+        <Label fx:id="lblMa" layoutX="1049.0" layoutY="276.0" prefHeight="17.0" prefWidth="100.0" visible="false" />
     </children>
 </Pane>

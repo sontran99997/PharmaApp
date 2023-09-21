@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainView" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000; -fx-pref-height: 700px; -fx-pref-width: 1340px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.CustomerController">
+    <children>
+        <Label layoutX="18.0" layoutY="14.0" text="Manage Customer">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="146.0" layoutY="80.0" onKeyReleased="#search" prefHeight="36.0" prefWidth="194.0" promptText="Search by Customer Name" />
+        <Button fx:id="btnAddCus" layoutX="736.0" layoutY="80.0" mnemonicParsing="false" onAction="#setBtnAddNewCus" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #1D9B2A;" text="+Add Customer" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font></Button>
+        <Label layoutX="14.0" layoutY="71.0" text="Search : ">
+            <font>
+                <Font name="System Italic" size="30.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnDelete" layoutX="1182.0" layoutY="80.0" mnemonicParsing="false" onAction="#setBtnDelete" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #EB5353;" text="Delete" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font></Button>
+        <TableView fx:id="tblCustomer" layoutX="14.0" layoutY="133.0" onMouseClicked="#setRecordSelected" prefHeight="517.0" prefWidth="845.0" stylesheets="@CSS/style.css">
+            <columns>
+            <TableColumn fx:id="clmSTT" prefWidth="43.0" text="No" />
+                <TableColumn fx:id="clmName" prefWidth="174.0" text="Full Name" />
+                <TableColumn fx:id="clmPhone" prefWidth="111.0" text="Phone Number" />
+                <TableColumn fx:id="clmDes" minWidth="0.0" prefWidth="170.0" text="Description" />
+                <TableColumn fx:id="clmImpDay" minWidth="0.0" prefWidth="152.0" text="Import Day" />
+                <TableColumn fx:id="clmAddress" prefWidth="151.0" text="Address" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tblBill" layoutX="878.0" layoutY="133.0" prefHeight="500.0" prefWidth="437.0" styleClass="table2">
+            <columns>
+                <TableColumn fx:id="clmBillID" prefWidth="37.0" text="ID" />
+                <TableColumn fx:id="clmBillName" prefWidth="132.0" text="Name" />
+                <TableColumn fx:id="clmBillDay" prefWidth="134.0" text="Sale Day" />
+                <TableColumn fx:id="clmBillTotal" prefWidth="133.0" text="Total" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txtPhone" layoutX="375.0" layoutY="80.0" onKeyReleased="#search" prefHeight="36.0" prefWidth="281.0" promptText="Search by Customer Phone Number" />
+        <Button fx:id="btnUpdate" layoutX="954.0" layoutY="80.0" mnemonicParsing="false" onAction="#setBtnUpdate" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #187498;" text="Update" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font></Button>
+        <Label fx:id="lblErrCusPhone1" layoutX="400.0" layoutY="124.0" text="Phone Number is wrong format" textFill="RED" visible="false" />
+      <Label fx:id="lblPaging" layoutX="432.0" layoutY="659.0" text="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPageBack" layoutX="387.0" layoutY="658.0" mnemonicParsing="false" onAction="#backPage" prefHeight="30.0" prefWidth="30.0" text="&lt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPageNext" layoutX="457.0" layoutY="658.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="30.0" text="&gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+    </children>
+
+</AnchorPane>

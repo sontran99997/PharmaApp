@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -8,35 +9,50 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.PharmaController">
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-pref-height: 700px; -fx-pref-width: 1340px;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.MedicineController">
     <children>
         <Label layoutX="14.0" text="Manage Medicine">
             <font>
                 <Font name="System Bold Italic" size="30.0" />
             </font>
         </Label>
-        <TextField layoutX="146.0" layoutY="80.0" prefHeight="36.0" prefWidth="291.0" promptText="Search by ID Medicine" />
-        <Button layoutX="1155.0" layoutY="80.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="133.0" text="+Add Medicine" />
+        <Button fx:id="btnAdd" layoutX="815.0" layoutY="81.0" mnemonicParsing="false" onAction="#setBtnAddNewMed" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #1D9B2A;" text="+Add Medicine" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
         <Label layoutX="14.0" layoutY="71.0" text="Search : ">
             <font>
                 <Font name="System Italic" size="30.0" />
             </font>
         </Label>
-        <TextField layoutX="484.0" layoutY="81.0" prefHeight="36.0" prefWidth="291.0" promptText="Search by Medicine Name" />
-        <TextField layoutX="816.0" layoutY="81.0" prefHeight="36.0" prefWidth="291.0" promptText="Search by Supplier" />
-        <TableView layoutX="14.0" layoutY="151.0" prefHeight="541.0" prefWidth="1278.0">
+        <TextField fx:id="txtName" layoutX="123.0" layoutY="81.0" onKeyReleased="#search" prefHeight="36.0" prefWidth="209.0" promptText="Search by Medicine Name" />
+        <TextField fx:id="txtSupp" layoutX="365.0" layoutY="81.0" onKeyReleased="#search" prefHeight="36.0" prefWidth="209.0" promptText="Search by Supplier" />
+        <TableView fx:id="tblThuoc" layoutX="14.0" layoutY="151.0" prefHeight="541.0" prefWidth="1278.0">
             <columns>
-                <TableColumn prefWidth="119.19999694824219" text="ID" />
-                <TableColumn prefWidth="142.4000244140625" text="Medicine Name" />
-                <TableColumn prefWidth="125.5999755859375" text="Medicine Type" />
-                <TableColumn prefWidth="117.5999755859375" text="Supplier" />
-                <TableColumn prefWidth="121.59991455078125" text="Purchase Price" />
-                <TableColumn prefWidth="121.5999755859375" text="Sell Price" />
-                <TableColumn prefWidth="144.0" text="Expired Day" />
-                <TableColumn prefWidth="143.199951171875" text="Images" />
-                <TableColumn prefWidth="116.0" text="Quantity" />
-                <TableColumn prefWidth="127.199951171875" text="Action" />
+                <TableColumn fx:id="clmID" prefWidth="47.0" text="ID" />
+                <TableColumn fx:id="clmName" prefWidth="235.0" text="Medicine Name" />
+                <TableColumn fx:id="clmType" prefWidth="193.0" text="Medicine Type" />
+                <TableColumn fx:id="clmUnit" prefWidth="86.0" text="Unit" />
+                <TableColumn fx:id="clmQua" prefWidth="59.0" text="Quantity" />
+                <TableColumn fx:id="clmSup" prefWidth="202.0" text="Supplier" />
+                <TableColumn fx:id="clmImportDay" prefWidth="108.0" text="Import Day" />
+                <TableColumn fx:id="clmExpiredDay" prefWidth="124.0" text="Expired Day" />
+                <TableColumn prefWidth="161.0" text="Price">
+                    <columns>
+                        <TableColumn fx:id="clmPurchase" prefWidth="103.0" text="Purchase Price" />
+                        <TableColumn fx:id="clmSell" prefWidth="120.0" text="Sell Price" />
+                    </columns>
+                </TableColumn>
             </columns>
         </TableView>
+        <Button fx:id="btnUpdate" layoutX="988.0" layoutY="81.0" mnemonicParsing="false" onAction="#setBtnUpdate" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #187498;" text="Update Medicine" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Button fx:id="btnDel" layoutX="1157.0" layoutY="81.0" mnemonicParsing="false" onAction="#setBtnDelete" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #EB5353;" text="Delete Medicine" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <ComboBox fx:id="cbbType" layoutX="604.0" layoutY="81.0" onAction="#search" prefHeight="36.0" prefWidth="177.0" promptText="Search by Type" />
     </children>
 </Pane>

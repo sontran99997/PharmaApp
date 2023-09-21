@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="532.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacyapp.controller.UpdateCustomerController">
+    <children>
+        <Label layoutX="193.0" layoutY="14.0" text="Update Customer">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font>
+        </Label>
+        <Line endX="529.0" layoutX="101.0" layoutY="86.0" startX="-100.0" />
+        <TextField fx:id="txtName" layoutX="204.0" layoutY="175.0" onKeyReleased="#setEnableBtnSave" prefHeight="30.0" prefWidth="260.0" style="-fx-alignment: center;" />
+        <TextField fx:id="txtPhone" layoutX="204.0" layoutY="225.0" onKeyReleased="#setEnableBtnSave" prefHeight="30.0" prefWidth="260.0" style="-fx-alignment: center;" />
+        <TextField fx:id="txtAddress" layoutX="204.0" layoutY="275.0" onKeyReleased="#setEnableBtnSave" prefHeight="30.0" prefWidth="260.0" style="-fx-alignment: center;" />
+        <VBox layoutX="37.0" layoutY="114.0" prefHeight="322.0" prefWidth="157.0">
+            <children>
+                <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="155.0" text="Customer ID : ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="50.0" prefWidth="155.0" text="Full Name : ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="50.0" prefWidth="155.0" text="Phone Number : ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="50.0" prefWidth="155.0" text="Address : ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="110.0" prefHeight="68.0" prefWidth="155.0" text="Note :">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <Button fx:id="btnSave" layoutX="204.0" layoutY="420.0" mnemonicParsing="false" onAction="#setBtnSave" prefHeight="46.0" prefWidth="99.0" style="-fx-background-color: #1D9B2A;" text="Save" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnClose" layoutX="365.0" layoutY="420.0" mnemonicParsing="false" onAction="#setBtnClose" prefHeight="46.0" prefWidth="99.0" style="-fx-background-color: #EB5353;" text="Close" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+        </Button>
+        <Label fx:id="lblErrName" layoutX="480.0" layoutY="130.0" text="Name is Null" textFill="RED" visible="false" />
+        <Label fx:id="lblErrPhone" layoutX="480.0" layoutY="181.0" text="Phone Number is Null" textFill="RED" visible="false" />
+        <Label fx:id="lblErrAddress" layoutX="480.0" layoutY="231.0" text="Address is Null" textFill="RED" visible="false" />
+        <Label fx:id="lblErrPhone1" layoutX="244.0" layoutY="204.0" text="Phone Number is wrong format" textFill="RED" visible="false" />
+        <TextArea fx:id="txtNote" layoutX="204.0" layoutY="325.0" prefHeight="61.0" prefWidth="260.0" />
+        <Label fx:id="lblID" layoutX="204.0" layoutY="124.0" prefHeight="30.0" prefWidth="260.0" style="-fx-alignment: center;" text="ID">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblErrPhone11" layoutX="244.0" layoutY="258.0" text="Phone Number is wrong format" textFill="RED" visible="false" />
+        <Label fx:id="lblErrPhone2" layoutX="489.0" layoutY="231.0" text="Phone Number is Null" textFill="RED" visible="false" />
+    </children>
+</Pane>
